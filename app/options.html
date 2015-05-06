@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <!-- endbower -->
@@ -10,7 +11,36 @@
     <!-- endbuild -->
   </head>
   <body>
-    <h1>'Allo, 'Allo!</h1>
+    <h1>テンプレート</h1>
+
+    <div id="event-description-templates">
+      <ul>
+        <li v-repeat="templates">
+          <label>
+            name:<br/>
+            <input v-model="name"/>
+          </label><br/>
+          <label>
+            content:<br/>
+            <textarea v-model="content"></textarea>
+          </label><br/>
+          <textarea class="template-comment" v-on="click: copy(this)" v-model="content | templateComment" readonly></textarea><br/>
+          <button v-on="click: removeTemplate(this)">×</button>
+        </li>
+      </ul>
+      <p>
+        ※正規表現の特殊文字を使用しないでください<br/>
+        <label>
+          name:<br/>
+          <input v-model="newTemplateName"/>
+        </label><br/>
+        <label>
+          content:<br/>
+          <textarea v-model="newTemplateContent"></textarea>
+        </label><br/>
+        <button v-on="click: addTemplate">Add</button>
+      </p>
+    </div>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
