@@ -21,6 +21,7 @@
         "https://manage.doorkeeper.jp/groups/*/events/*/edit"
       ],
       "js": [
+        "bower_components/jsdiff/diff.js",
         "scripts/contentscript.js"
       ],
       "run_at": "document_end",

@@ -2,7 +2,8 @@
   "name": "event-description-template",
   "version": "0.0.0",
   "dependencies": {
-    "vue": "csp"
+    "vue": "csp",
+    "jsdiff": "~1.4.0"
   },
   "devDependencies": {}
 }

@@ -18,7 +18,8 @@ function findTemplate(templates, name) {
 }
 
 function replaceConfirm(content1, content2) {
-  return window.confirm('----------------\n' + content1 + '\n----------------\n' + content2 + '\n----------------\n置き換えますか?');
+  return window.confirm('置き換えますか?\n\n' + JsDiff.createPatch('イベント内容', content1, content2));
+  // return window.confirm('----------------\n' + content1 + '\n----------------\n' + content2 + '\n----------------\n置き換えますか?');
 }
 
 function updateDescription(templates, description) {
