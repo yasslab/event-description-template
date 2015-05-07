@@ -29,19 +29,32 @@ var app = new Vue({
     }
   },
   methods: {
-    copy: function (template) {
+    copy: function (template, event) {
+      event.preventDefault();
+
       var copy = template.$el.querySelector('.template-comment');
       copy.focus();
       copy.select();
       document.execCommand('copy');
     },
-    addTemplate: function () {
+    addTemplate: function (event) {
+      event.preventDefault();
+
+      if (!this.newTemplateName || !this.newTemplateContent) {
+        alert('空欄があります');
+        return;
+      }
+
       this.templates.push({name: this.newTemplateName, content: this.newTemplateContent});
       this.newTemplateName = '';
       this.newTemplateContent = '';
     },
-    removeTemplate: function (template) {
-      this.templates.$remove(template.$data);
+    removeTemplate: function (template, event) {
+      event.preventDefault();
+
+      if (window.confirm('削除してもいいですか?')) {
+        this.templates.$remove(template.$data);
+      }
     }
   }
 });

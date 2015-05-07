@@ -12,35 +12,45 @@
     <!-- endbuild -->
   </head>
   <body>
-    <h1>テンプレート</h1>
-
-    <div id="event-description-templates">
-      <ul>
-        <li v-repeat="templates">
-          <label>
-            name:<br/>
-            <input v-model="name"/>
-          </label><br/>
-          <label>
-            content:<br/>
-            <textarea v-model="content"></textarea>
-          </label><br/>
-          <textarea class="template-comment" v-on="click: copy(this)" v-model="content | templateComment" readonly></textarea><br/>
-          <button v-on="click: removeTemplate(this)">×</button>
-        </li>
-      </ul>
-      <p>
-        ※正規表現の特殊文字を使用しないでください<br/>
-        <label>
-          name:<br/>
-          <input v-model="newTemplateName"/>
-        </label><br/>
-        <label>
-          content:<br/>
-          <textarea v-model="newTemplateContent"></textarea>
-        </label><br/>
-        <button v-on="click: addTemplate">Add</button>
-      </p>
+    <div id="event-description-templates" class="container">
+      <div class="row">
+        <div class="col md-12">
+          <h1>テンプレート</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col md-12">
+          <form>
+            <label>
+              name:
+              <input class="form-control" v-model="newTemplateName"/>
+            </label><br/>
+            <label>
+              content:
+              <textarea class="form-control" v-model="newTemplateContent"></textarea>
+            </label><br/>
+            <button class="btn" v-on="click: addTemplate">Add</button>
+          </form>
+        </div>
+        <hr/>
+      </div>
+      <div class="row">
+        <div class="col md-12" v-repeat="templates">
+          <form>
+            <label>
+              name: <input class="form-control" v-model="name"/>
+            </label><br/>
+            <label>
+              content:<br/>
+              <textarea class="form-control" v-model="content"></textarea>
+            </label><br/>
+            <textarea class="template-comment" v-model="content | templateComment" readonly></textarea>
+            <button class="btn btn-dark" v-on="click: copy(this, $event)">templateをコピー</button>
+            <button class="btn btn-error" v-on="click: removeTemplate(this, $event)">×</button>
+          </form>
+          <hr/>
+        </div>
+      </div>
     </div>
 
     <!-- build:js scripts/vendor.js -->

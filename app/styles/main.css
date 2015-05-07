@@ -1,3 +1,6 @@
-body {
-  padding: 20px;
+.template-comment {
+  width: 1px;
+  height: 1px;
+  min-height: 0px;
+  padding: 0px;
 }
