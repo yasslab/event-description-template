@@ -1,3 +1,5 @@
+/* global JsDiff */
+
 'use strict';
 
 var store = {
@@ -74,3 +76,23 @@ button.addEventListener('click', function (event) {
 });
 
 eventDescriptionJa.parentNode.insertBefore(button, eventDescriptionJa.nextSibling);
+
+function insertTextAtCursor(text) {
+  var el = document.activeElement;
+  var e = document.createEvent('TextEvent');
+  e.initTextEvent('textInput', true, true, null, text);
+  el.focus();
+  el.dispatchEvent(e);
+}
+
+// cf. https://github.com/srsudar/biotool/blob/master/app/scripts/contentscript.js
+chrome.runtime.onMessage.addListener(function(request) {
+  switch (request.command) {
+    case 'paste':
+      insertTextAtCursor(request.template);
+      break;
+    default:
+      console.log('unknown command: ' + request.command);
+      break;
+  }
+});

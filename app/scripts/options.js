@@ -1,3 +1,5 @@
+/* global Vue */
+
 'use strict';
 
 var KEY = 'event description template';
@@ -7,7 +9,7 @@ var store = {
     return JSON.parse(localStorage.getItem(KEY) || '[]');
   },
   save: function (templates) {
-    localStorage.setItem(KEY, JSON.stringify(templates));
+    chrome.runtime.sendMessage({command: 'store.save', templates: templates}, function () {});
   }
 };
 
@@ -41,7 +43,7 @@ var app = new Vue({
       event.preventDefault();
 
       if (!this.newTemplateName || !this.newTemplateContent) {
-        alert('空欄があります');
+        window.alert('空欄があります');
         return;
       }
 
