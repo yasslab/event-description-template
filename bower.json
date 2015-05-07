@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "dependencies": {
     "vue": "csp",
-    "jsdiff": "~1.4.0"
+    "jsdiff": "~1.4.0",
+    "skyblue": "~1.0.4"
   },
   "devDependencies": {}
 }
