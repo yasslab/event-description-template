@@ -27,7 +27,7 @@ var app = new Vue({
   },
   filters: {
     templateComment: function (content) {
-      return '<!-- template: ' + this.name + ' -->\n' + content + '\n<!-- template: ' + this.name + ' -->';
+      return '\n\n<!-- template: ' + this.name + ' -->\n\n' + content + '\n\n<!-- template: ' + this.name + ' -->\n\n';
     }
   },
   methods: {
