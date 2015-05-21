@@ -54,7 +54,7 @@ function onClickHandler(info, tab) {
     return;
   }
 
-  var templateStr = '<!-- template: ' + template.name + ' -->\n' + template.content + '\n<!-- template: ' + template.name + ' -->\n';
+  var templateStr = '\n\n<!-- template: ' + template.name + ' -->\n\n' + template.content + '\n\n<!-- template: ' + template.name + ' -->\n\n';
   chrome.tabs.sendMessage(tab.id, {command: 'paste', template: templateStr});
 }
 
