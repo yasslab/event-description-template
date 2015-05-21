@@ -42,7 +42,7 @@ function updateDescription(templates, description) {
     }
 
     if (replaceConfirm(content, template.content)) {
-      return '<!-- template: ' + name + ' -->\n' + template.content + '\n<!-- template: ' + name2 + ' -->';
+      return '<!-- template: ' + name + ' -->\n\n' + template.content + '\n\n<!-- template: ' + name2 + ' -->';
     } else {
       return original;
     }
