@@ -22,4 +22,12 @@ Doorkeeperのイベント内容の一部分をテンプレートみたいにし�
 
 ```console
 $ npm install -g grunt-cli
+$ git clone https://github.com/yasslab/event-description-template/issues/1
+$ cd event-description-template
+$ npm install
+$ npm install -g bower
+$ bower install
+$ grunt watch
 ```
+
+Chromeの拡張機能設定画面から「パッケージ化されていない拡張機能を読み込む」で`app`ディレクトリを選択する。
