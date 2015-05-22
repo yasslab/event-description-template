@@ -27,7 +27,7 @@ function replaceConfirm(content1, content2) {
 function updateDescription(templates, description) {
   return description.replace(/^<!-- template: (.*) -->$\n([\s\S]+?)\n^<!-- template: (.*) -->$/gm, function (original, name, content, name2) {
     if (name !== name2) {
-      throw new Error('teplate:' + name + ' と template: ' + name2 + ' が一致しません。');
+      throw new Error('template:' + name + ' と template: ' + name2 + ' が一致しません。');
     }
 
     var template = findTemplate(templates, name);
