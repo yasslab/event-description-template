@@ -8,13 +8,13 @@ Doorkeeperのイベント内容の一部分をテンプレートみたいにし�
 使い方
 -----
 
-テンプレートを貼る
+## 1. テンプレートを貼る
 ![テンプレートを貼る](doc/images/paste-template.png)
 
-テンプレートを設定する
+## 2. テンプレートを更新する
 ![テンプレートを設定する](doc/images/template-options.png)
 
-テンプレートの部分を置き換える
+## 3. テンプレートの部分を置き換える
 ![テンプレートの部分を置き換える](doc/images/replace-confirm.png)
 
 開発
@@ -22,7 +22,7 @@ Doorkeeperのイベント内容の一部分をテンプレートみたいにし�
 
 ```console
 $ npm install -g grunt-cli
-$ git clone https://github.com/yasslab/event-description-template/issues/1
+$ git clone https://github.com/yasslab/event-description-template.git
 $ cd event-description-template
 $ npm install
 $ npm install -g bower
