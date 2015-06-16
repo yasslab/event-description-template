@@ -31,3 +31,13 @@ $ grunt watch
 ```
 
 Chromeの拡張機能設定画面から「パッケージ化されていない拡張機能を読み込む」で`app`ディレクトリを選択する。
+
+
+ライセンス
+---------
+
+## License
+
+Copyright &copy; 2015 [YassLab](http://yasslab.jp)
+
+The extension is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
