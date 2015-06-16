@@ -36,8 +36,6 @@ Chromeの拡張機能設定画面から「パッケージ化されていない�
 ライセンス
 ---------
 
-## License
-
 Copyright &copy; 2015 [YassLab](http://yasslab.jp)
 
 The extension is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
